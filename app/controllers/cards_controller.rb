@@ -1,4 +1,5 @@
 class CardsController < ApplicationController
+  before_filter :login_required, :only => [:new, :edit, :update]
   # GET /cards
   # GET /cards.xml
   def index
