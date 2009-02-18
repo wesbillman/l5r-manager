@@ -72,40 +72,6 @@ table {
 	margin-left:20px;
 }
 
-#navigation {
-	border-bottom:2px solid #CC0000;
-	font-size:90%;
-	line-height:100%;
-	margin-bottom:-20px;
-	margin-top:-5px;
-	padding:0.5em 20px 0.5em 0.5em;
-	text-align:right;
-}
-
-#navigation a, #navigation a:visited {
-	background-color:#EAE3C5;
-	color:black;
-	display:inline;
-	outline-color:-moz-use-text-color;
-	outline-style:none;
-	outline-width:medium;
-	padding:0.5em 0.9em;
-	text-decoration:none;
-}
-
-#navigation a:hover, #navigation a:visited:hover {
-	text-decoration:underline;
-}
-
-#navigation strong a, #navigation strong a:visited {
-	background-color:white;
-	color:black;
-}
-
-#navigation .separator {
-	display:none;
-}
-
 #main {
 	float:left;
 	width:100%;

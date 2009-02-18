@@ -9,7 +9,46 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090210053621) do
+ActiveRecord::Schema.define(:version => 20090218052704) do
+
+  create_table "card_types", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cards", :force => true do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.integer  "card_type_id"
+    t.integer  "clan_id"
+    t.integer  "user_id"
+    t.string   "ability"
+    t.integer  "force"
+    t.integer  "chi"
+    t.string   "honor_requirement"
+    t.integer  "gold_cost"
+    t.integer  "prov_str"
+    t.integer  "gold_prod"
+    t.integer  "start_honor"
+    t.integer  "personal_honor"
+    t.integer  "focus"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clans", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "decks", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login"
