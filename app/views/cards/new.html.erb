@@ -13,15 +13,16 @@
   </p>
   <p>
     <%= f.label :card_type_id %><br />
-    <%= f.text_field :card_type_id %>
+		<%= collection_select(:card, :card_type_id , @card_types, "id", "name") %>
   </p>
   <p>
     <%= f.label :clan_id %><br />
-    <%= f.text_field :clan_id %>
+		<%= collection_select(:card, :clan_id , @clans, "id", "name") %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.label :user_id %> - <%= h current_user.login %>
+		
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </p>
   <p>
     <%= f.label :ability %><br />

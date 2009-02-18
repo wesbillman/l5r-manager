@@ -25,6 +25,8 @@ class CardsController < ApplicationController
   # GET /cards/new.xml
   def new
     @card = Card.new
+    @card_types = CardType.find(:all)
+    @clans = Clan.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
