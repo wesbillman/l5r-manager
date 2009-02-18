@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @deck_card.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @deck_card.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_deck_card_path(@deck_card) %> |
+<%= link_to 'Back', deck_cards_path %>

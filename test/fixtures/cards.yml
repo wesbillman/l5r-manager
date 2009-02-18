@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  desc: MyText
+  card_type_id: 1
+  clan_id: 1
+  user_id: 1
+  ability: MyString
+  force: 1
+  chi: 1
+  honor_requirement: MyString
+  gold_cost: 1
+  prov_str: 1
+  gold_prod: 1
+  start_honor: 1
+  personal_honor: 1
+  focus: 1
+
+two:
+  name: MyString
+  desc: MyText
+  card_type_id: 1
+  clan_id: 1
+  user_id: 1
+  ability: MyString
+  force: 1
+  chi: 1
+  honor_requirement: MyString
+  gold_cost: 1
+  prov_str: 1
+  gold_prod: 1
+  start_honor: 1
+  personal_honor: 1
+  focus: 1

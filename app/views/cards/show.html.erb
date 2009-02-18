@@ -1,0 +1,78 @@
+<p>
+  <b>Name:</b>
+  <%=h @card.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%=h @card.desc %>
+</p>
+
+<p>
+  <b>Card type:</b>
+  <%=h @card.card_type_id %>
+</p>
+
+<p>
+  <b>Clan:</b>
+  <%=h @card.clan_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @card.user_id %>
+</p>
+
+<p>
+  <b>Ability:</b>
+  <%=h @card.ability %>
+</p>
+
+<p>
+  <b>Force:</b>
+  <%=h @card.force %>
+</p>
+
+<p>
+  <b>Chi:</b>
+  <%=h @card.chi %>
+</p>
+
+<p>
+  <b>Honor requirement:</b>
+  <%=h @card.honor_requirement %>
+</p>
+
+<p>
+  <b>Gold cost:</b>
+  <%=h @card.gold_cost %>
+</p>
+
+<p>
+  <b>Prov str:</b>
+  <%=h @card.prov_str %>
+</p>
+
+<p>
+  <b>Gold prod:</b>
+  <%=h @card.gold_prod %>
+</p>
+
+<p>
+  <b>Start honor:</b>
+  <%=h @card.start_honor %>
+</p>
+
+<p>
+  <b>Personal honor:</b>
+  <%=h @card.personal_honor %>
+</p>
+
+<p>
+  <b>Focus:</b>
+  <%=h @card.focus %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

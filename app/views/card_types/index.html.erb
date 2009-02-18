@@ -1,0 +1,20 @@
+<h1>Listing card_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% for card_type in @card_types %>
+  <tr>
+    <td><%=h card_type.name %></td>
+    <td><%= link_to 'Show', card_type %></td>
+    <td><%= link_to 'Edit', edit_card_type_path(card_type) %></td>
+    <td><%= link_to 'Destroy', card_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New card_type', new_card_type_path %>
