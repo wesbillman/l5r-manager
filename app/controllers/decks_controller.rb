@@ -1,8 +1,9 @@
 class DecksController < ApplicationController
+  before_filter :login_required, :only => [:new, :edit, :update]
   # GET /decks
   # GET /decks.xml
   def index
-    @decks = Deck.find(:all)
+    @decks = Deck.find(:all, :conditions => ['user_id = ?', "#{current_user.id}"])
 
     respond_to do |format|
       format.html # index.html.erb

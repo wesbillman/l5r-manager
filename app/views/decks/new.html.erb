@@ -8,8 +8,11 @@
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+	  <p>
+	    <%= f.label :user_id %> - <%= h current_user.login %>
+
+	    <%= f.hidden_field :user_id, :value => current_user.id %>
+	  </p>
   </p>
   <p>
     <%= f.submit "Create" %>
