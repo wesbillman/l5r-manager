@@ -9,9 +9,16 @@
   <div id="page">
     <div id="header">
 			<div id="site-title">
-			<a href="#">L5R Card Manager</a>
+			<%= link_to 'L5R Card Manager', root_url %>
 			</div>
 			<div id="site-subtitle">For managing all your L5R cards</div>
+			<div id="nav">
+				<ul>
+				  <li <%= selected_navigation?(:card) %>><%= link_to('Cards', :controller => 'cards') %></li>
+				  <li <%= selected_navigation?(:deck) %>><%= link_to('Decks', :controller => 'decks') %></li>
+				  <li <%= selected_navigation?(:settings) %>><%= link_to('Settings', :controller => 'settings') %></li>
+				</ul>
+			</div>
     </div>
     <div id="main">      
       <%= "<div id=\"notice\">#{flash[:notice]}</div>" if flash[:notice] %>
