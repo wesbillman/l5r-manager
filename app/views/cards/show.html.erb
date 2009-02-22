@@ -73,6 +73,8 @@
   <%=h @card.focus %>
 </p>
 
+<% if authorized? or (@card.user_id == current_user.id)%>
+	<%= link_to 'Edit', edit_card_path(@card) %> |
+<% end %>
 
-<%= link_to 'Edit', edit_card_path(@card) %> |
 <%= link_to 'Back', cards_path %>
