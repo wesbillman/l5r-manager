@@ -1,71 +1,8 @@
 <h1>Editing card</h1>
 
 <% form_for(@card) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :desc %><br />
-    <%= f.text_area :desc %>
-  </p>
-  <p>
-    <%= f.label :card_type_id %><br />
-    <%= f.text_field :card_type_id %>
-  </p>
-  <p>
-    <%= f.label :clan_id %><br />
-    <%= f.text_field :clan_id %>
-  </p>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.label :ability %><br />
-    <%= f.text_field :ability %>
-  </p>
-  <p>
-    <%= f.label :force %><br />
-    <%= f.text_field :force %>
-  </p>
-  <p>
-    <%= f.label :chi %><br />
-    <%= f.text_field :chi %>
-  </p>
-  <p>
-    <%= f.label :honor_requirement %><br />
-    <%= f.text_field :honor_requirement %>
-  </p>
-  <p>
-    <%= f.label :gold_cost %><br />
-    <%= f.text_field :gold_cost %>
-  </p>
-  <p>
-    <%= f.label :prov_str %><br />
-    <%= f.text_field :prov_str %>
-  </p>
-  <p>
-    <%= f.label :gold_prod %><br />
-    <%= f.text_field :gold_prod %>
-  </p>
-  <p>
-    <%= f.label :start_honor %><br />
-    <%= f.text_field :start_honor %>
-  </p>
-  <p>
-    <%= f.label :personal_honor %><br />
-    <%= f.text_field :personal_honor %>
-  </p>
-  <p>
-    <%= f.label :focus %><br />
-    <%= f.text_field :focus %>
-  </p>
-  <p>
+	<%= render(:partial => 'cards/form') %>
     <%= f.submit "Update" %>
-  </p>
 <% end %>
 
 <%= link_to 'Show', @card %> |
