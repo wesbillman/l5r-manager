@@ -37,8 +37,8 @@
     <td><%=h card.personal_honor %></td>
     <td><%=h card.focus %></td>
     <td><%= link_to 'Show', card %></td>
-    <td><%= link_to 'Edit', edit_card_path(card) %></td>
 		<% if authorized? %>
+    	<td><%= link_to 'Edit', edit_card_path(card) %></td>
     	<td><%= link_to 'Destroy', card, :confirm => 'Are you sure?', :method => :delete %></td>
 		<% end %>
   </tr>
@@ -46,5 +46,8 @@
 </table>
 
 <br />
-
-<%= link_to 'New card', new_card_path %>
+<% if logged_in? %>
+	<%= link_to 'New card', new_card_path %>
+<% else %>
+	Please <%= link_to 'login', login_url %> to create new cards
+<% end %>

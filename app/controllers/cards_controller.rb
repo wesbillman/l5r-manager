@@ -38,13 +38,16 @@ class CardsController < ApplicationController
   # GET /cards/1/edit
   def edit
     @card = Card.find(params[:id])
+    @card_types = CardType.find(:all)
+    @clans = Clan.find(:all)
   end
 
   # POST /cards
   # POST /cards.xml
   def create
     @card = Card.new(params[:card])
-
+    @card_types = CardType.find(:all)
+    @clans = Clan.find(:all)
     respond_to do |format|
       if @card.save
         flash[:notice] = 'Card was successfully created.'
@@ -61,7 +64,8 @@ class CardsController < ApplicationController
   # PUT /cards/1.xml
   def update
     @card = Card.find(params[:id])
-
+    @card_types = CardType.find(:all)
+    @clans = Clan.find(:all)
     respond_to do |format|
       if @card.update_attributes(params[:card])
         flash[:notice] = 'Card was successfully updated.'

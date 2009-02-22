@@ -120,6 +120,32 @@ table {
 	text-decoration:none;
 }
 
+.errorExplanation {
+	background-color:#ffcccc;
+	border:1px solid red;
+	vertical-align:top;
+	padding: 10px;
+}
+ 
+.errorExplanation h2 {
+	color: maroon;
+}
+ 
+.errorExplanation ul li {
+	list-style: square;
+}
+ 
+.fieldWithErrors input[type="text"],
+.fieldWithErrors input[type="password"],
+.fieldWithErrors textarea {
+	border-color: red;
+}
+ 
+.flashNotice {
+	border: 1px solid green;
+	background-color: #ccffcc;
+}
+
 #notice, #error {
 	background-color:inherit;
 	color:white;
