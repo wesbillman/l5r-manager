@@ -31,7 +31,7 @@ module AuthenticatedSystem
     #    current_user.login != "bob"
     #  end
     def authorized?
-      logged_in?
+      logged_in? and (current_user.login == "wes" or current_user.login == "alan" or current_user.login == "karl")
     end
 
     # Filter method to enforce a login requirement.
@@ -89,7 +89,7 @@ module AuthenticatedSystem
     # Inclusion hook to make #current_user and #logged_in?
     # available as ActionView helper methods.
     def self.included(base)
-      base.send :helper_method, :current_user, :logged_in?
+      base.send :helper_method, :current_user, :logged_in?, :authorized?
     end
 
     # Called from #current_user.  First attempt to login by the user id stored in the session.
