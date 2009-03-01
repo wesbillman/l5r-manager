@@ -1,6 +1,3 @@
-
-<%= error_messages_for(:card) %>
-
 <p>
   <%= label(:card, :name, "Name") %><br />
   <%= text_field(:card, :name) %>
@@ -8,6 +5,10 @@
 <p>
   <%= label(:card, :desc, "Description") %><br />
   <%= text_area(:card, :desc) %>
+</p>
+<p>
+	<%= label(:card, :photo, "Add Photo") %><br />
+	<%= f.file_field :photo %>
 </p>
 <p>
   <%= label(:card, :card_type_id) %><br />
@@ -19,7 +20,6 @@
 </p>
 <p>
   <%= label(:card, :user_id) %> - <%= h current_user.login %>
-
   <%= hidden_field(:card, :user_id, :value => current_user.id) %>
 </p>
 <p>
