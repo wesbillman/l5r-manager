@@ -1,3 +1,7 @@
+require 'rubygems'
+require 'rmagick' # Don't use a capital 'R'.
+
+
 class CardsController < ApplicationController
   #before_filter :login_required, :only => [:new, :edit, :update]
   # GET /cards
@@ -15,7 +19,10 @@ class CardsController < ApplicationController
   # GET /cards/1.xml
   def show
     @card = Card.find(params[:id])
-
+    @card_type = CardType.find(@card.card_type_id)
+    @clan = Clan.find(@card.clan_id)
+    @user = User.find(@card.user_id)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @card }

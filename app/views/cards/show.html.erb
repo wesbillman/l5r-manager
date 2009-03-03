@@ -9,22 +9,22 @@
 </p>
 
 <p>
-	<%= image_tag @card.photo.url %>
+	<%= image_tag @card.photo.url(:small) %>
 </p>
 
 <p>
   <b>Card type:</b>
-  <%=h @card.card_type_id %>
+  <%=h @card_type.name %>
 </p>
 
 <p>
   <b>Clan:</b>
-  <%=h @card.clan_id %>
+  <%=h @clan.name %>
 </p>
 
 <p>
   <b>User:</b>
-  <%=h @card.user_id %>
+  <%=h @user.login %>
 </p>
 
 <p>

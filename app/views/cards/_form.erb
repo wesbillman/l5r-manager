@@ -7,8 +7,11 @@
   <%= text_area(:card, :desc) %>
 </p>
 <p>
-	<%= label(:card, :photo, "Add Photo") %><br />
+	<%= label(:card, :photo, "Photo") %><br />
 	<%= f.file_field :photo %>
+	<% if @card.photo.exists? %>
+		<br /><%= image_tag @card.photo.url(:thumb) %>
+	<% end %>
 </p>
 <p>
   <%= label(:card, :card_type_id) %><br />

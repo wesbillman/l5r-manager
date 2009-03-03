@@ -12,7 +12,6 @@ class Card < ActiveRecord::Base
   
   #create validations
   validates_presence_of :name, :desc
-  #validates_numericality_of :force, :chi, :gold_cost, :prov_str
-  #validates_numericality_of :gold_prod, :start_honor, :personal_honor, :focus
+  validates_attachment_size :photo, :less_than => 1.megabyte, :message =>"must be less than 1MB"
   
 end
