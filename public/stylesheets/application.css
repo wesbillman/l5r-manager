@@ -114,6 +114,38 @@ table {
 	text-decoration:none;
 }
 
+#nav {
+	height: 11px;
+}
+
+#nav ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+}
+
+#nav li {
+	display:block;
+	float:left;
+	position:relative;
+	margin-right: 8px;
+}
+
+#nav li a {
+	border:medium none;
+	color:#EAE3C5;
+	display:block;
+	float:left;
+	font-weight:bold;
+	padding:6px 16px 5px;
+	position:relative;
+}
+
+#nav li.selected a {
+	background-color:#FFFFFF;
+	color: #222222;
+}
+
 .errorExplanation {
 	background-color:#ffcccc;
 	border:1px solid red;
