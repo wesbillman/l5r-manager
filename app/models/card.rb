@@ -6,8 +6,11 @@ class Card < ActiveRecord::Base
   #for photo attachments
   has_attached_file :photo,
                     :styles => {
+                    :avatar => "40x40#",
                     :thumb => "100x100#",
-                    :small  => "150x150>"}
+                    :small  => "150x150>",
+                    :medium => "300x300>",
+                    :large => "500x500>"}
   
   
   #create validations

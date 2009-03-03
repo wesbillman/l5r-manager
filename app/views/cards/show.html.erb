@@ -1,32 +1,14 @@
-<p>
-  <b>Name:</b>
-  <%=h @card.name %>
-</p>
+<div class="card">
+<%= image_tag @card.photo.url(:medium) %>
+<h3><%=h @card.name %></h3>
+<span class="info">
+Created by 
+<%= link_to @user.login, @user %>. Card type is <%= link_to @card_type.name, @card_type %> in Clan <%= link_to @clan.name, @clan %></span>
+<span class="desc"><%=h @card.desc %></span>
+</div>
 
-<p>
-  <b>Desc:</b>
-  <%=h @card.desc %>
-</p>
-
-<p>
-	<%= image_tag @card.photo.url(:small) %>
-</p>
-
-<p>
-  <b>Card type:</b>
-  <%=h @card_type.name %>
-</p>
-
-<p>
-  <b>Clan:</b>
-  <%=h @clan.name %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%=h @user.login %>
-</p>
-
+<div style="clear: both;">
+<div class="card_details">
 <p>
   <b>Ability:</b>
   <%=h @card.ability %>
@@ -77,6 +59,7 @@
   <%=h @card.focus %>
 </p>
 
+</div>
 <% if authorized? or (@card.user_id == current_user.id)%>
 	<%= link_to 'Edit', edit_card_path(@card) %> |
 <% end %>
