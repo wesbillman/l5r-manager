@@ -1,50 +1,19 @@
-<h1>Listing cards</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Desc</th>
-    <th>Card type</th>
-    <th>Clan</th>
-    <th>User</th>
-    <th>Ability</th>
-    <th>Force</th>
-    <th>Chi</th>
-    <th>Honor requirement</th>
-    <th>Gold cost</th>
-    <th>Prov str</th>
-    <th>Gold prod</th>
-    <th>Start honor</th>
-    <th>Personal honor</th>
-    <th>Focus</th>
-  </tr>
-
+<div id="cards">
+<ul>
 <% for card in @cards %>
-  <tr>
-    <td><%=h card.name %></td>
-    <td><%=h card.desc %></td>
-    <td><%=h card.card_type_id %></td>
-    <td><%=h card.clan_id %></td>
-    <td><%=h card.user_id %></td>
-    <td><%=h card.ability %></td>
-    <td><%=h card.force %></td>
-    <td><%=h card.chi %></td>
-    <td><%=h card.honor_requirement %></td>
-    <td><%=h card.gold_cost %></td>
-    <td><%=h card.prov_str %></td>
-    <td><%=h card.gold_prod %></td>
-    <td><%=h card.start_honor %></td>
-    <td><%=h card.personal_honor %></td>
-    <td><%=h card.focus %></td>
-    <td><%= link_to 'Show', card %></td>
-		<% if authorized? %>
-    	<td><%= link_to 'Edit', edit_card_path(card) %></td>
-    	<td><%= link_to 'Destroy', card, :confirm => 'Are you sure?', :method => :delete %></td>
-		<% end %>
-  </tr>
+		<li class="card">
+			<%= link_to image_tag(card.photo.url(:avatar)), card %>
+			<%= link_to card.name, card %>
+			Created by <%= link_to card.user.login, card.user %>
+			<%=card.created_at.strftime(" on %m/%d/%Y") %><br />
+			<% if authorized? %>
+				<%= link_to 'Edit', edit_card_path(card) %> | 
+				<%= link_to 'Delete', card, :confirm => 'Are you sure?', :method => :delete %>
+			<% end %>
+		</li>
 <% end %>
-</table>
-
+</ul>
+</div>
 <br />
 <% if logged_in? %>
 	<%= link_to 'New card', new_card_path %>

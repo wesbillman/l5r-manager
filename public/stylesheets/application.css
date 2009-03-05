@@ -197,6 +197,28 @@ table {
 	padding: 10px;
 }
 
+#cards {
+	margin-left: 60px;
+	margin-top: 18px;
+}
+
+#cards ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin:0 0 30px;
+	padding:0;
+	width:100%;
+}
+#cards li.card {
+	border-bottom:1px solid #EEEEEE;
+	line-height:160%;
+	padding:10px !important;
+	position:relative;
+	height: 45px;
+	font-size: 85%;
+}
+
 h1 {
 	margin-top:0;
 }
@@ -215,9 +237,14 @@ h4 {
 	margin: 0px;
 }
 
-.card img {
+#card img {
 	float: left;
 	padding: 10px;
+}
+
+.card img {
+	padding: 4px;
+	float: left;
 }
 
 .card_details {
