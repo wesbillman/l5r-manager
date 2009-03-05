@@ -7,58 +7,22 @@ Created by
 <span class="desc"><%=h @card.desc %></span>
 </div>
 
-<div style="clear:both;">
+<div style="clear:both;"></div>
 <div class="card_details">
-<p>
-  <b>Ability:</b>
-  <%=h @card.ability %>
-</p>
-
-<p>
-  <b>Force:</b>
-  <%=h @card.force %>
-</p>
-
-<p>
-  <b>Chi:</b>
-  <%=h @card.chi %>
-</p>
-
-<p>
-  <b>Honor requirement:</b>
-  <%=h @card.honor_requirement %>
-</p>
-
-<p>
-  <b>Gold cost:</b>
-  <%=h @card.gold_cost %>
-</p>
-
-<p>
-  <b>Prov str:</b>
-  <%=h @card.prov_str %>
-</p>
-
-<p>
-  <b>Gold prod:</b>
-  <%=h @card.gold_prod %>
-</p>
-
-<p>
-  <b>Start honor:</b>
-  <%=h @card.start_honor %>
-</p>
-
-<p>
-  <b>Personal honor:</b>
-  <%=h @card.personal_honor %>
-</p>
-
-<p>
-  <b>Focus:</b>
-  <%=h @card.focus %>
-</p>
-
+	<h3>Details</h3>
+	<div id="box">
+		  <b>Ability:</b> <%=h @card.ability %> <br />
+		  <b>Force:</b> <%=h @card.force %><br />
+		  <b>Chi:</b> <%=h @card.chi %><br />
+		  <b>Honor requirement:</b> <%=h @card.honor_requirement %><br />
+		  <b>Gold cost:</b> <%=h @card.gold_cost %><br />
+		  <b>Prov str:</b> <%=h @card.prov_str %><br />
+		  <b>Gold prod:</b> <%=h @card.gold_prod %><br />
+		  <b>Start honor:</b> <%=h @card.start_honor %><br />
+		  <b>Personal honor:</b> <%=h @card.personal_honor %><br />
+		  <b>Focus:</b> <%=h @card.focus %><br />
+		</p>
+	</div>
 </div>
 <% if authorized? or (@card.user_id == current_user.id)%>
 	<%= link_to 'Edit', edit_card_path(@card) %> |
