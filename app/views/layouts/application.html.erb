@@ -16,7 +16,9 @@
 				<ul>
 				  <li <%= selected_navigation?(:card) %>><%= link_to('Cards', :controller => 'cards') %></li>
 				  <li <%= selected_navigation?(:deck) %>><%= link_to('Decks', :controller => 'decks') %></li>
+					<% if authorized? -%>
 				  <li <%= selected_navigation?(:settings) %>><%= link_to('Settings', :controller => 'settings') %></li>
+				  <% end -%>
 				</ul>
 			</div>
     </div>
