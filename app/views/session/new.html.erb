@@ -1,12 +1,12 @@
 <% form_tag session_path do -%>
-<p><label for="login">Login</label><br/>
-<%= text_field_tag 'login' %></p>
+<h4 style="color:white"><label for="login">Login</label><br/>
+<%= text_field_tag 'login' %></h4>
 
-<p><label for="password">Password</label><br/>
-<%= password_field_tag 'password' %></p>
+<h4 style="color:white"><label for="password">Password</label><br/>
+<%= password_field_tag 'password' %></h4>
 
-<p><label for="remember_me">Remember me:</label>
-<%= check_box_tag 'remember_me' %></p>
+<h4 style="color:white"><label for="remember_me">Remember me:</label>
+<%= check_box_tag 'remember_me' %></h4>
 
 <p><%= submit_tag 'Log in' %></p>
 <% end -%>

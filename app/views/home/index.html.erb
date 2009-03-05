@@ -1,8 +1,14 @@
-<p>Welcome to L5R Deck Manager</p>
+<h3 style="color:white">Welcome to L5R Deck Manager</h3>
+<h4 style="color:white"> I am here to assist players of the legend of Five Rings
+card game in order to keep a digital record of their cards,
+and to create a virtual deck from this database. Players can then play
+through their turn sequences in order to get better understanding of 
+their percentage of drawing into useful cards.</h4>
 <% if logged_in? -%>
 	<p>You are currently logged in as <%= link_to h(current_user.login), current_user %></p>
 	<%= link_to 'logout', logout_url %>
 <% else -%>
-	<p>Please <%= link_to 'login', login_url %> or 
-	<%= link_to 'register', signup_url %></p>
+	<h3 style="color:white" >Please
+	<%= link_to 'login', login_url %> or 
+	<%= link_to 'register', signup_url %></h3>
 <% end -%>

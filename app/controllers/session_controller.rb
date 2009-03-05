@@ -1,6 +1,6 @@
 # This controller handles the login/logout function of the site.  
 class SessionController < ApplicationController
-  
+  layout 'stand1'
   # render new.rhtml
   def new
   end
