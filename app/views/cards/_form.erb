@@ -4,15 +4,13 @@
 </p>
 <p>
   <%= label(:card, :desc, "Description") %><br />
-  <%= text_area(:card, :desc) %>
+  <%= text_area(:card, :desc, :rows => 6) %>
 </p>
 <p>
 	<%= label(:card, :photo, "Photo") %><br />
 	<%= f.file_field :photo %>
-	<% if @card.photo.exists? %>
-		<br /><%= image_tag @card.photo.url(:thumb) %>
-	<% end %>
 </p>
+<div style="clear: both;"></div>
 <p>
   <%= label(:card, :card_type_id) %><br />
 	<%= collection_select(:card, :card_type_id , @card_types, "id", "name") %>
