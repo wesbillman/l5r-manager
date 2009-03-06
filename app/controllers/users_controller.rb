@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  layout 'stand1'
   # render new.rhtml
   def new
   end
