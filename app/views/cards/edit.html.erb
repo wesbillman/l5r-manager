@@ -1,6 +1,7 @@
-<div id="card">
+<div class="contentleft">
 <%= image_tag @card.photo.url(:medium) %>
-
+</div>
+<div class="contentright">
 <% form_for(@card, :html => { :multipart => true }) do |f| %>
 	<%= f.error_messages %>
 	<%= render :partial => 'form', :locals => { :f => f } %>	
