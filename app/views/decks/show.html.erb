@@ -3,11 +3,16 @@
   <%=h @deck.name %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%=h @deck.user_id %>
-</p>
+<b>Cards in this Deck</b>
+<div id="cards">
+  <%= render :partial => 'deck_cards/deck_cards',
+             :locals  => {:deck_cards => @deck.deck_cards} %>
+</div>
 
+<% form_tag(:action => 'add_card', :id => @deck.id) do -%>
+	<%= render(:partial => 'add_card') %>
+	<%= submit_tag("Add Card to Deck") -%>
+<% end %>
 
 <%= link_to 'Edit', edit_deck_path(@deck) %> |
 <%= link_to 'Back', decks_path %>

@@ -16,6 +16,7 @@ class DecksController < ApplicationController
   def show
     @deck = Deck.find(params[:id])
     @user = User.find(@deck.user_id)
+    @cards = Card.find(:all)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @deck }
@@ -36,6 +37,18 @@ class DecksController < ApplicationController
   # GET /decks/1/edit
   def edit
     @deck = Deck.find(params[:id])
+  end
+  
+  def add_card
+    @deck = Deck.find(params[:id])
+    @deck_card = @deck.deck_cards.build(params[:deck_card])
+    
+    if @deck_card.save
+      flash[:notice] = 'Card was added successfully'
+      redirect_to(:action => 'show', :id => @deck.id)
+    else
+      render(:template => 'deck_card/deck_card')
+    end
   end
 
   # POST /decks

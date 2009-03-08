@@ -2,14 +2,14 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>User</th>
+    <th>Deck</th>
+    <th>Card</th>
   </tr>
 
 <% for deck_card in @deck_cards %>
   <tr>
-    <td><%=h deck_card.name %></td>
-    <td><%=h deck_card.user_id %></td>
+    <td><%=h deck_card.deck_id %></td>
+    <td><%=h deck_card.card_id %></td>
     <td><%= link_to 'Show', deck_card %></td>
     <td><%= link_to 'Edit', edit_deck_card_path(deck_card) %></td>
     <td><%= link_to 'Destroy', deck_card, :confirm => 'Are you sure?', :method => :delete %></td>
