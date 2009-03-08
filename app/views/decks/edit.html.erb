@@ -2,19 +2,11 @@
 
 <% form_for(@deck) do |f| %>
   <%= f.error_messages %>
-
-  <p>
+<div id="box">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
-  </p>
+</div>
+    <%= f.submit "Update" %> or <%= link_to 'Cancel', decks_path %>
 <% end %>
 
-<%= link_to 'Show', @deck %> |
-<%= link_to 'Back', decks_path %>
+

@@ -1,22 +1,24 @@
 <h1>Listing decks</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>User</th>
-  </tr>
+<% if @decks.size > 0 -%>
+	<table>
+	  <tr>
+	    <th>Name</th>
+	    <th>User</th>
+	  </tr>
 
-<% for deck in @decks %>
-  <tr>
-    <td><%=h deck.name %></td>
-    <td><%=h deck.user_id %></td>
-    <td><%= link_to 'Show', deck %></td>
-    <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
-    <td><%= link_to 'Destroy', deck, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+	<% for deck in @decks %>
+	  <tr>
+	    <td><%=h deck.name %></td>
+	    <td><%=h deck.user_id %></td>
+	    <td><%= link_to 'Show', deck %></td>
+	    <td><%= link_to 'Edit', edit_deck_path(deck) %></td>
+	    <td><%= link_to 'Destroy', deck, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+<% else -%>
+	You do not have any decks. 
+<% end -%>
 
 <%= link_to 'Create new deck', new_deck_path %>

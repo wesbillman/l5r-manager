@@ -1,5 +1,5 @@
 class DecksController < ApplicationController
-  before_filter :login_required, :only => [:new, :edit, :update]
+  before_filter :login_required, :only => [:index, :new, :edit, :update]
   # GET /decks
   # GET /decks.xml
   def index
@@ -15,7 +15,7 @@ class DecksController < ApplicationController
   # GET /decks/1.xml
   def show
     @deck = Deck.find(params[:id])
-
+    @user = User.find(@deck.user_id)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @deck }

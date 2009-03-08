@@ -8,9 +8,6 @@
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "Update" %> or <%= link_to 'Cancel', clans_path %>
   </p>
 <% end %>
-
-<%= link_to 'Show', @clan %> |
-<%= link_to 'Back', clans_path %>

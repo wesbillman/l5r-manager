@@ -5,8 +5,7 @@
 <% form_for(@card, :html => { :multipart => true }) do |f| %>
 	<%= f.error_messages %>
 	<%= render :partial => 'form', :locals => { :f => f } %>	
-  <%= f.submit "Update" %>
+  <%= f.submit "Update" %> or <%= link_to 'Cancel', cards_path %>
 <% end %>
 </div>
-<%= link_to 'Show', @card %> |
-<%= link_to 'Back', cards_path %>
+

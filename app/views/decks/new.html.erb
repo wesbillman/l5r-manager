@@ -1,22 +1,10 @@
-<h1>New deck</h1>
 
 <% form_for(@deck) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
+<div id="box">
+    <%= f.label :name, "Please enter a name for your deck" %><br />
     <%= f.text_field :name %>
-  </p>
-  <p>
-	  <p>
-	    <%= f.label :user_id %> - <%= h current_user.login %>
-
-	    <%= f.hidden_field :user_id, :value => current_user.id %>
-	  </p>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
+	  <%= f.hidden_field :user_id, :value => current_user.id %>
+</div>
+    <%= f.submit "Create" %> or <%= link_to 'Cancel', decks_path %>
 <% end %>
-
-<%= link_to 'Back', decks_path %>
