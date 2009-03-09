@@ -1,5 +1,13 @@
+<div id="cards">
+<ul>
 <% for deck_card in deck_cards -%>
 	<% if !deck_card.card.nil? -%>
-		<%= deck_card.card_id %>
+		<li class="card">
+		<%= link_to image_tag(deck_card.card.photo.url(:avatar)), deck_card.card %>
+		<%= link_to deck_card.card.name, deck_card.card %><br />
+		<%= link_to 'Remove', deck_card, :confirm => 'Are you sure?', :method => :delete %>
+		</li>
 	<% end -%>
 <% end -%>
+</ul>
+</div>

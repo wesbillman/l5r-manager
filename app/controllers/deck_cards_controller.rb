@@ -78,7 +78,7 @@ class DeckCardsController < ApplicationController
     @deck_card.destroy
 
     respond_to do |format|
-      format.html { redirect_to(deck_cards_url) }
+      format.html { redirect_to(@deck_card.deck) }
       format.xml  { head :ok }
     end
   end
