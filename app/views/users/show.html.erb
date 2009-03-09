@@ -1,3 +1,6 @@
 <h1>User Information</h1>
 <h4>Login: <%= @user.login %></h4>
 <h4>Email: <%= @user.email %></h4>
+<br />
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Destroy', @user, :confirm => 'Are you sure?', :method => :delete %>
