@@ -1,9 +1,12 @@
 <h1>Settings</h1>
-TODO: this page needs some help...
 
+<% if admin? -%>
 <ul>
 	<li><%= link_to "Card Types", card_types_url %></li>
 	<li><%= link_to "Clans", clans_url %></li>
 	<li><%= link_to "Decks", decks_url %></li>
 	<li><%= link_to "Deck Cards", deck_cards_url %></li>
 </ul>
+<% else -%>
+	<h3>Sorry, you must be an admin to access this page!</h3>
+<% end -%>

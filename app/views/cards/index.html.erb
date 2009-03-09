@@ -1,3 +1,8 @@
+<% if logged_in? %>
+	<%= link_to 'Add new card', new_card_path %>
+<% else %>
+	Please <%= link_to 'login', login_url %> to create new cards
+<% end %>
 <div id="cards">
 <ul>
 <% for card in @cards %>
@@ -14,9 +19,3 @@
 <% end %>
 </ul>
 </div>
-<br />
-<% if logged_in? %>
-	<%= link_to 'New card', new_card_path %>
-<% else %>
-	Please <%= link_to 'login', login_url %> to create new cards
-<% end %>
