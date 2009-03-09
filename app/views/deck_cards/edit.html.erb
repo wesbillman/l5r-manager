@@ -12,9 +12,7 @@
     <%= f.text_field :deck_id %>
   </p>
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "Update" %> or <%= link_to 'Cancel', deck_cards_path %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @deck_card %> |
-<%= link_to 'Back', deck_cards_path %>

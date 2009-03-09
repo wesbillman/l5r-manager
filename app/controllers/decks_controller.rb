@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'rmagick' # Don't use a capital 'R'.
+
 class DecksController < ApplicationController
   before_filter :login_required, :only => [:index, :new, :edit, :update]
   # GET /decks
