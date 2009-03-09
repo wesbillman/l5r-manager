@@ -6,7 +6,7 @@
 			<%= link_to card.name, card %>
 			Created by <%= link_to card.user.login, card.user %>
 			<%=card.created_at.strftime(" on %m/%d/%Y") %><br />
-			<% if authorized? %>
+			<% if admin? %>
 				<%= link_to 'Edit', edit_card_path(card) %> | 
 				<%= link_to 'Delete', card, :confirm => 'Are you sure?', :method => :delete %>
 			<% end %>

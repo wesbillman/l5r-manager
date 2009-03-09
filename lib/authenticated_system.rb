@@ -31,9 +31,13 @@ module AuthenticatedSystem
     #    current_user.login != "bob"
     #  end
     def authorized?
-      logged_in? and (current_user.login == "wes" or current_user.login == "alan" or current_user.login == "karl")
+      logged_in?  
     end
 
+    def admin?
+      logged_in? and (current_user.login == "wes" or current_user.login == "alan" or current_user.login == "karl")
+    end
+    
     # Filter method to enforce a login requirement.
     #
     # To require logins for all actions, use this in your controllers:
@@ -49,7 +53,7 @@ module AuthenticatedSystem
     #   skip_before_filter :login_required
     #
     def login_required
-      authorized? || access_denied
+      logged_in? || access_denied
     end
 
     # Redirect as appropriate when an access request fails.
@@ -89,7 +93,7 @@ module AuthenticatedSystem
     # Inclusion hook to make #current_user and #logged_in?
     # available as ActionView helper methods.
     def self.included(base)
-      base.send :helper_method, :current_user, :logged_in?, :authorized?
+      base.send :helper_method, :current_user, :logged_in?, :admin?
     end
 
     # Called from #current_user.  First attempt to login by the user id stored in the session.
