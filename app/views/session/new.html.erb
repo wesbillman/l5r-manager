@@ -1,16 +1,15 @@
-<table align="center" width="440" height="265" background="/images/log_back.jpg">
-<tr><th>
+<div id="login" class="login_form">
 <% form_tag session_path do -%>
-<h2 style="color:black"><label for="login">Login</label><br/>
-<%= text_field_tag 'login' %></h2>
+<label for="login">Login</label><br/>
+<%= text_field_tag 'login' %><br/>
 
-<h2 style="color:back"><label for="password">Password</label><br/>
-<%= password_field_tag 'password' %></h2>
+<label for="password">Password</label><br/>
+<%= password_field_tag 'password' %><br/>
 
-<h3 style="color:black"><label for="remember_me">Remember me:</label>
-<%= check_box_tag 'remember_me' %></h3>
+<label for="remember_me">Remember me:</label>
+<%= check_box_tag 'remember_me' %> <br/>
 
-<p><%= submit_tag 'Log in' %></p>
+<%= submit_tag 'Log in' %>
 <% end -%>
-</th></tr>
-</table>
+</div>
+

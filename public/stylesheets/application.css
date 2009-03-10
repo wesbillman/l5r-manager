@@ -270,3 +270,27 @@ h4 {
 	display: block;
 	position: static;
 }
+
+#login {
+	width: 31em;
+}
+
+.login_form {
+	background-color:#EAF2F5;
+	border:20px solid #DDDDDD;
+	margin:3em auto 0;
+	padding:2em 2em 1em;
+	width:60em;
+}
+
+#register {
+	width: 31em;
+}
+
+.register_form {
+	background-color:#EAF2F5;
+	border:20px solid #DDDDDD;
+	margin:3em auto 0;
+	padding:2em 2em 1em;
+	width:60em;
+}

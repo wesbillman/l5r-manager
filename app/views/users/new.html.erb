@@ -1,5 +1,4 @@
-<table align="center" width="440" height="265" background="/images/log_back.jpg">
-<tr><th>
+<div id="register" class="register_form">
 <%= error_messages_for :user %>
 <% form_for :user, :url => users_path do |f| -%>
 <h4 style="color:black"><label for="login">Login</label><br/>
@@ -16,5 +15,4 @@
 
 <p><%= submit_tag 'Sign up' %></p>
 <% end -%>
-</th></tr>
-</table>
+</div>
