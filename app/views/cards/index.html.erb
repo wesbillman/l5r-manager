@@ -9,7 +9,7 @@
 		<li class="card">
 			<%= link_to image_tag(card.photo.url(:avatar)), card %>
 			<%= link_to card.name, card %>
-			Created by <%= link_to card.user.login, card.user %>
+			Created by <%= h card.user.login%>
 			<%=card.created_at.strftime(" on %m/%d/%Y") %><br />
 			<% if admin? %>
 				<%= link_to 'Edit', edit_card_path(card) %> | 
