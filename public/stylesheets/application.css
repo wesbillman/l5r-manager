@@ -7,6 +7,11 @@ body {
 	padding:0;
 }
 
+a {
+	color:#4183C4;
+	text-decoration:none;
+}
+
 img {
 	border:medium none;
 	vertical-align:middle;
@@ -272,25 +277,23 @@ h4 {
 }
 
 #login {
-	width: 31em;
+	width: 25em;
+}
+
+#login form label {
+	display: block;
+	margin: 1em 0 0;
 }
 
 .login_form {
 	background-color:#EAF2F5;
-	border:20px solid #DDDDDD;
+	border:10px solid #DDDDDD;
 	margin:3em auto 0;
-	padding:2em 2em 1em;
+	padding:0 2em 1em;
 	width:60em;
 }
 
-#register {
-	width: 31em;
-}
-
-.register_form {
-	background-color:#EAF2F5;
-	border:20px solid #DDDDDD;
-	margin:3em auto 0;
-	padding:2em 2em 1em;
-	width:60em;
+.login_form h2 a {
+	font-size:70%;
+	font-weight:normal;
 }

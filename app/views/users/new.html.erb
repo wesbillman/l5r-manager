@@ -1,17 +1,18 @@
-<div id="register" class="register_form">
 <%= error_messages_for :user %>
+<div id="login" class="login_form">
+<h2>Register</h2>
 <% form_for :user, :url => users_path do |f| -%>
-<h4 style="color:black"><label for="login">Login</label><br/>
-<%= f.text_field :login %></h4>
+<label for="login">Login</label>
+<%= f.text_field :login, :style => "width: 34em;"  %><br/>
 
-<h4 style="color:black"><label for="email">Email</label><br/>
-<%= f.text_field :email %></h4>
+<label for="email">Email</label>
+<%= f.text_field :email, :style => "width: 34em;" %><br/>
 
-<h4 style="color:black"><label for="password">Password</label><br/>
-<%= f.password_field :password %></h4>
+<label for="password">Password</label>
+<%= f.password_field :password, :style => "width: 34em;" %><br/>
 
-<h4 style="color:black"><label for="password_confirmation">Confirm Password</label><br/>
-<%= f.password_field :password_confirmation %></h4>
+<label for="password_confirmation">Confirm Password</label>
+<%= f.password_field :password_confirmation, :style => "width: 34em;" %><br/>
 
 <p><%= submit_tag 'Sign up' %></p>
 <% end -%>
