@@ -22,6 +22,14 @@ input[type="image"] {
 	vertical-align:middle;
 }
 
+input[type="text"], input[type="password"], input[type="search"], textarea {
+	border-color:#AAAAAA #DDDDDD #DDDDDD #AAAAAA;
+	border-style:solid;
+	border-width:1px;
+	font-size:100%;
+	width: 300px;
+}
+
 .hidden {
 	display:none;
 }
@@ -264,11 +272,11 @@ h4 {
 	position: static;
 }
 
-#login {
-	width: 25em;
+#login_box {
+	width: 20em;
 }
 
-#login form label {
+#login_box form label {
 	display: block;
 	margin: 1em 0 0;
 }
