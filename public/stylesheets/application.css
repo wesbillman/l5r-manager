@@ -42,19 +42,15 @@ table {
 #header {
 	background-color:#CC0000;
 	color:white;
-	padding-bottom:20px;
 	padding-top:1px;
 	width:100%;
+	height: 110px;
 }
 
 #header a, #header a:visited {
 	background-color:inherit;
 	color:white;
 	text-decoration:none;
-}
-
-#header a:hover, #header a:visited:hover {
-	text-decoration:underline;
 }
 
 #site-title {
@@ -117,16 +113,8 @@ table {
 	color:white;
 }
 
-#site-links a:hover, #site-links a:visited:hover {
-	text-decoration:none;
-}
-
-#site-links strong a, #site-links strong a:visited {
-	text-decoration:none;
-}
-
 #nav {
-	height: 11px;
+	height: 30px;
 }
 
 #nav ul {
@@ -148,7 +136,7 @@ table {
 	display:block;
 	float:left;
 	font-weight:bold;
-	padding:6px 16px 5px;
+	padding:6px 16px 8px;
 	position:relative;
 }
 
