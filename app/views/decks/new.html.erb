@@ -3,7 +3,7 @@
   <%= f.error_messages %>
 <div id="box">
     <%= f.label :name, "Please enter a name for your deck" %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => "big" %>
 	  <%= f.hidden_field :user_id, :value => current_user.id %>
 </div>
     <%= f.submit "Create" %> or <%= link_to 'Cancel', decks_path %>

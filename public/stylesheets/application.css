@@ -17,16 +17,15 @@ img {
 	vertical-align:middle;
 }
 
-input[type="image"] {
-	border:medium none;
-	vertical-align:middle;
+input[type="text"].big {
+	font-size: 130%;
 }
 
-input[type="text"], input[type="password"], input[type="search"], textarea {
+input[type="text"], input[type="password"], input[type="search"], input[type="image"], textarea {
 	border-color:#AAAAAA #DDDDDD #DDDDDD #AAAAAA;
 	border-style:solid;
 	border-width:1px;
-	font-size:100%;
+	font-size: 100%;
 	width: 300px;
 }
 
