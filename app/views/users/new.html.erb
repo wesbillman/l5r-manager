@@ -3,16 +3,16 @@
 <h2>Register</h2>
 <% form_for :user, :url => users_path do |f| -%>
 <label for="login">Login</label>
-<%= f.text_field :login, :style => "width: 34em;"  %><br/>
+<%= f.text_field :login, :style => "width: 28em;"  %><br/>
 
 <label for="email">Email</label>
-<%= f.text_field :email, :style => "width: 34em;" %><br/>
+<%= f.text_field :email, :style => "width: 28em;" %><br/>
 
 <label for="password">Password</label>
-<%= f.password_field :password, :style => "width: 34em;" %><br/>
+<%= f.password_field :password, :style => "width: 28em;" %><br/>
 
 <label for="password_confirmation">Confirm Password</label>
-<%= f.password_field :password_confirmation, :style => "width: 34em;" %><br/>
+<%= f.password_field :password_confirmation, :style => "width: 28em;" %><br/>
 
 <p><%= submit_tag 'Sign up' %></p>
 <% end -%>
