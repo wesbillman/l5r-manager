@@ -13,11 +13,11 @@
 <div style="clear: both;"></div>
 <p>
   <%= label(:card, :card_type_id) %><br />
-	<%= collection_select(:card, :card_type_id , @card_types, "id", "name") %>
+	<%= collection_select(:card, :card_type_id , @card_types, "id", "name", {:include_blank => true}) %>
 </p>
 <p>
   <%= label(:card, :clan_id) %><br />
-	<%= collection_select(:card, :clan_id , @clans, "id", "name") %>
+	<%= collection_select(:card, :clan_id , @clans, "id", "name", {:include_blank => true}) %>
 </p>
 <p>
   <%= label(:card, :user_id) %> - <%= h current_user.login %>

@@ -1,5 +1,5 @@
 <b><%=h @deck.name %></b> <%= link_to '(Edit)', edit_deck_path(@deck) %><br/>
-
+<b>Total Cards: <%= h @deck.cards.size %>
 <div id="cards">
   <%= render :partial => 'deck_cards/deck_cards',
              :locals  => {:deck_cards => @deck.deck_cards} %>

@@ -16,7 +16,7 @@ class Card < ActiveRecord::Base
   
   
   #create validations
-  validates_presence_of :name, :desc
+  validates_presence_of :name, :desc, :card_type
   validates_uniqueness_of :name
   validates_attachment_size :photo, :less_than => 1.megabyte, :message =>"must be less than 1MB"
   
