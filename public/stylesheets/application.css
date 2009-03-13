@@ -169,7 +169,8 @@ table {
  
 .fieldWithErrors input[type="text"],
 .fieldWithErrors input[type="password"],
-.fieldWithErrors textarea {
+.fieldWithErrors textarea,
+.fieldWithErrors select {
 	border-color: red;
 }
  

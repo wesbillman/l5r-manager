@@ -20,7 +20,7 @@ class CardsController < ApplicationController
   def show
     @card = Card.find(params[:id])
     @card_type = CardType.find(@card.card_type_id)
-    @clan = Clan.find(@card.clan_id)
+    @clan = Clan.find(@card.clan_id) unless @card.clan_id.nil?
     @user = User.find(@card.user_id)
     
     respond_to do |format|

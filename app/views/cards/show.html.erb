@@ -3,7 +3,10 @@
 <h3><%=h @card.name %></h3>
 <span class="info">
 Created by 
-<%= link_to @user.login, @user %>. Card type is <%= link_to @card_type.name, @card_type %> in Clan <%= link_to @clan.name, @clan %></span>
+<%= link_to @user.login, @user %>. Card type is <%= link_to @card_type.name, @card_type %>
+<% if !@clan.nil? -%>
+	in Clan <%= link_to @clan.name, @clan %>
+<% end -%></span>
 <span class="desc"><%=h @card.desc %></span>
 </div>
 
