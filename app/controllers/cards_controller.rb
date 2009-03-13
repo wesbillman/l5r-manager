@@ -7,7 +7,7 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.xml
   def index
-    @cards = Card.find(:all)
+    @cards = Card.find(:all, :order => 'name ASC')
 
     respond_to do |format|
       format.html # index.html.erb

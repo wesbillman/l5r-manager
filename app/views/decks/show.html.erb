@@ -1,11 +1,10 @@
 <b><%=h @deck.name %></b> <%= link_to '(Edit)', edit_deck_path(@deck) %><br/>
-<b>Total Cards: <%= h @deck.cards.size %>
-<div id="cards">
-  <%= render :partial => 'deck_cards/deck_cards',
-             :locals  => {:deck_cards => @deck.deck_cards} %>
-</div>
-
+<b>Cards: <%= h @deck.cards.size %>
 <% form_tag(:action => 'add_card', :id => @deck.id) do -%>
 	<%= render(:partial => 'add_card') %>
 	<%= submit_tag("Add Card to Deck") -%>
 <% end %>
+<div id="cards">
+  <%= render :partial => 'deck_cards/deck_cards',
+             :locals  => {:deck_cards => @deck.deck_cards} %>
+</div>
