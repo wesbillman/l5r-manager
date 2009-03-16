@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   def new
   end
 
+  def terms
+  end
+  
   def index
     @users = User.find(:all)
   end

@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.settings '/settings', :controller => 'setting', :action => 'index'
   map.signup  '/signup', :controller => 'users', :action => 'new'
+  map.terms   '/terms', :controller => 'users', :action => 'terms'
   map.login   '/login', :controller => 'session', :action => 'new'
   map.logout  '/logout', :controller => 'session', :action => 'destroy'
   map.connect ':controller/:action/:id'
