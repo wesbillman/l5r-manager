@@ -6,7 +6,7 @@ class DecksController < ApplicationController
   # GET /decks
   # GET /decks.xml
   def index
-    @decks = Deck.find(:all, :conditions => ['user_id = ?', "#{current_user.id}"])
+    @decks = Deck.find(:all, :order => 'name ASC', :conditions => ['user_id = ?', "#{current_user.id}"])
 
     respond_to do |format|
       format.html # index.html.erb
