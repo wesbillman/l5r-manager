@@ -1,13 +1,28 @@
-<div id="cards">
-<ul>
-<% for deck_card in deck_cards -%>
-	<% if !deck_card.card.nil? -%>
-		<li class="card">
-		<%= link_to image_tag(deck_card.card.photo.url(:avatar)), deck_card.card %>
+<table>
+<% prev_card_id = nil %>
+<% row_item_count = 0 %>
+
+<% deck_cards.sort_by { |deck_card| deck_card.card.name }.each do |deck_card| -%>
+	<% if !prev_card_id.nil? and prev_card_id != deck_card.card.id -%>
+		</tr>
+		<% row_item_count = 0 -%>
+	<% end -%>
+	<% if row_item_count == 0 -%>
+		<tr>
+	<% end -%>
+	<td>
+	
+		<%= link_to image_tag(deck_card.card.photo.url(:small)), deck_card.card %>
 		<%= link_to deck_card.card.name, deck_card.card %><br />
 		<%= link_to 'Remove', deck_card, :confirm => 'Are you sure?', :method => :delete %>
-		</li>
+	
+	</td>
+	<% prev_card_id = deck_card.card.id -%>
+	<% if row_item_count == 2 -%>
+		</tr>
+		<% row_item_count = 0 -%>
+	<% else -%>
+		<% row_item_count = row_item_count + 1 -%>
 	<% end -%>
 <% end -%>
-</ul>
-</div>
+</table>
