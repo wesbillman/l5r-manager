@@ -300,6 +300,11 @@ h4 {
 	width:60em;
 }
 
+
+.login_form input[type="text"], input[type="password"] {
+	width: 300px;
+}
+
 .login_form h2 a {
 	font-size:70%;
 	font-weight:normal;
