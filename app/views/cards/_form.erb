@@ -1,65 +1,71 @@
+<div id="form">
+	<div id="form_right">
+	<p>
+	  <%= label(:card, :card_type_id) %><br />
+		<%= collection_select(:card, :card_type_id , @card_types, "id", "name", {:include_blank => true}) %>
+	</p>
+	<p>
+	  <%= label(:card, :clan_id) %><br />
+		<%= collection_select(:card, :clan_id , @clans, "id", "name", {:include_blank => true}) %>
+	</p>
+	<p>
+	  <%= label(:card, :force) %><br />
+	  <%= text_field(:card, :force) %>
+	</p>
+	<p>
+	  <%= label(:card, :chi) %><br />
+	  <%= text_field(:card, :chi) %>
+	</p>
+	<p>
+	  <%= label(:card, :honor_requirement) %><br />
+	  <%= text_field(:card, :honor_requirement) %>
+	</p>
+	<p>
+	  <%= label(:card, :gold_cost) %><br />
+	  <%= text_field(:card, :gold_cost) %>
+	</p>
+	<p>
+	  <%= label(:card, :prov_str) %><br />
+	  <%= text_field(:card, :prov_str) %>
+	</p>
+	<p>
+	  <%= label(:card, :gold_prod) %><br />
+	  <%= text_field(:card, :gold_prod) %>
+	</p>
+	<p>
+	  <%= label(:card, :start_honor) %><br />
+	  <%= text_field(:card, :start_honor) %>
+	</p>
+	<p>
+	  <%= label(:card, :personal_honor) %><br />
+	  <%= text_field(:card, :personal_honor) %>
+	</p>
+	<p>
+	  <%= label(:card, :focus) %><br />
+	  <%= text_field(:card, :focus) %>
+	</p>
+	</div>
+<div id="form_left">
 <p>
   <%= label(:card, :name, "Name") %><br />
-  <%= text_field(:card, :name, :class => "big") %>
+  <%= text_field(:card, :name, :class => "big full_width") %>
 </p>
 <p>
   <%= label(:card, :desc, "Description") %><br />
-  <%= text_area(:card, :desc, :rows => 6) %>
+  <%= text_area(:card, :desc, :rows => 10, :class => "full_width") %>
+</p>
+<p>
+  <%= label(:card, :ability) %><br />
+  <%= text_area(:card, :ability, :rows => 10, :class => "full_width") %>
 </p>
 <p>
 	<%= label(:card, :photo, "Photo") %><br />
 	<%= f.file_field :photo %>
 </p>
-<div style="clear: both;"></div>
+</div>
 <p>
-  <%= label(:card, :card_type_id) %><br />
-	<%= collection_select(:card, :card_type_id , @card_types, "id", "name", {:include_blank => true}) %>
-</p>
-<p>
-  <%= label(:card, :clan_id) %><br />
-	<%= collection_select(:card, :clan_id , @clans, "id", "name", {:include_blank => true}) %>
-</p>
-<p>
-  <%= label(:card, :user_id) %> - <%= h current_user.login %>
+  <%= label(:card, :user_id, "Created by") %> - <%= h current_user.login %>
   <%= hidden_field(:card, :user_id, :value => current_user.id) %>
 </p>
-<p>
-  <%= label(:card, :ability) %><br />
-  <%= text_field(:card, :ability) %>
-</p>
-<p>
-  <%= label(:card, :force) %><br />
-  <%= text_field(:card, :force) %>
-</p>
-<p>
-  <%= label(:card, :chi) %><br />
-  <%= text_field(:card, :chi) %>
-</p>
-<p>
-  <%= label(:card, :honor_requirement) %><br />
-  <%= text_field(:card, :honor_requirement) %>
-</p>
-<p>
-  <%= label(:card, :gold_cost) %><br />
-  <%= text_field(:card, :gold_cost) %>
-</p>
-<p>
-  <%= label(:card, :prov_str) %><br />
-  <%= text_field(:card, :prov_str) %>
-</p>
-<p>
-  <%= label(:card, :gold_prod) %><br />
-  <%= text_field(:card, :gold_prod) %>
-</p>
-<p>
-  <%= label(:card, :start_honor) %><br />
-  <%= text_field(:card, :start_honor) %>
-</p>
-<p>
-  <%= label(:card, :personal_honor) %><br />
-  <%= text_field(:card, :personal_honor) %>
-</p>
-<p>
-  <%= label(:card, :focus) %><br />
-  <%= text_field(:card, :focus) %>
-</p>
+</div>
+<div style="clear: both;"></div>
