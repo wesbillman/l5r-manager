@@ -1,4 +1,3 @@
-
 .add {
     background-image: url(../images/add.png);
 }
@@ -10,6 +9,15 @@
 .delete {
     background-image: url(../images/delete.png);
 }
+
+.key {
+    background-image: url(../images/key.png);
+}
+
+.register {
+    background-image: url(../images/register.png);
+}
+
 .icon {
     background-position:0 40%;
     background-repeat:no-repeat;

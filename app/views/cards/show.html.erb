@@ -1,6 +1,6 @@
 <div id="main">
 	<div class="block">
-	<h3>Listing Cards</h3>
+	<h3><%= h @card.name %></h3>
 		<div class="content">
 			<div id="card">
 			<%= image_tag @card.photo.url(:medium) %>

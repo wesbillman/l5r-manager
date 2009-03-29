@@ -1,6 +1,6 @@
 <div id="main">
 	<div class="block">
-	<h3>Listing Cards</h3>
+	<h3><%= @deck.name %></h3>
 		<div class="content">
   	<%= render :partial => 'deck_cards/deck_cards',
              :locals  => {:deck_cards => @deck.deck_cards } %>
