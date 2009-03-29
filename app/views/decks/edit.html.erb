@@ -1,12 +1,13 @@
-<h1>Edit deck info</h1>
-
-<% form_for(@deck) do |f| %>
+<h2 class="title">Edit Deck</h2>
+<% form_for(@deck, :html => { :class => "form" }) do |f| %>
   <%= f.error_messages %>
-<div id="box">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-</div>
-    <%= f.submit "Update" %> or <%= link_to 'Cancel', decks_path %>
+		<div class="inner">
+    <%= f.label :name, "Please enter a name for your deck" %><br />
+    <%= f.text_field :name, :class => "text_field" %>
+	  <%= f.hidden_field :user_id, :value => current_user.id %>
+		</div>
+    <p><%= f.submit "Update", :class => "button" %> or <%= link_to 'Cancel', decks_path %></p>
 <% end %>
+
 
 

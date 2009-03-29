@@ -1,10 +1,33 @@
-<b><%=h @deck.name %></b> <%= link_to '(Edit)', edit_deck_path(@deck) %><br/>
-<b>Cards: <%= h @deck.cards.size %>
-<% form_tag(:action => 'add_card', :id => @deck.id) do -%>
-	<%= render(:partial => 'add_card') %>
-	<%= submit_tag("Add Card to Deck") -%>
-<% end %>
-<div id="cards">
-  <%= render :partial => 'deck_cards/deck_cards',
+<div id="main">
+	<div class="block">
+	<h3>Listing Cards</h3>
+		<div class="content">
+  	<%= render :partial => 'deck_cards/deck_cards',
              :locals  => {:deck_cards => @deck.deck_cards } %>
+		</div>
+	</div>	
+</div>
+
+<div id="sidebar">
+	<div class="block">
+    <h3>Deck Information</h3>
+    <div class="content">
+			<p>Name: <%=h @deck.name %><br />
+			<span class="gray">Cards: <%= h @deck.cards.size %></span>
+			</p>
+			<p><%= link_to 'Edit', edit_deck_path(@deck), :class => "icon edit" %></p>			
+    </div>
+  </div>
+	<div class="block">
+    <h3>Manage Cards for this Deck</h3>
+    <div class="content">
+			<h4>Add a card to this deck</h4>
+			<% form_tag({:action => 'add_card', :id => @deck.id}, :class => "form") do -%>
+				<%= render(:partial => 'add_card') %>
+				<%= submit_tag("Add Card to Deck", :class => "button") -%>
+			<% end %>
+			
+			<p>TODO: We need to add search area here.</p>
+    </div>
+  </div>
 </div>

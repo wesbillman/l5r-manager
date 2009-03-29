@@ -1,36 +1,43 @@
-<div id="card">
-<%= image_tag @card.photo.url(:medium) %>
-<h3><%=h @card.name %></h3>
-<span class="info">
-Created by 
-<%= link_to @user.login, @user %>. Card type is <%= link_to @card_type.name, @card_type %>
-<% if !@clan.nil? -%>
-	in Clan <%= link_to @clan.name, @clan %>
-<% end -%></span>
-<span class="desc"><%=h @card.desc %></span>
-</div>
+<div id="main">
+	<div class="block">
+	<h3>Listing Cards</h3>
+		<div class="content">
+			<div id="card">
+			<%= image_tag @card.photo.url(:medium) %>
+			
+			<h2><%=h @card.name %></h2>
+			Created by 
+			<%= link_to @user.login, @user %>. Card type is <%= link_to @card_type.name, @card_type %>
+			<% if !@clan.nil? -%>
+				in Clan <%= link_to @clan.name, @clan %>
+			<% end -%></span>
+			<p><span class="gray"><%=h @card.desc %></span></p>
+			<% if !current_user.nil? -%>
+				<% if admin? or (@card.user_id == current_user.id) -%>
+					<%= link_to 'Edit', edit_card_path(@card), :class => "icon edit" %> |
+				<% end -%>
+			<% end -%>
 
-<div style="clear:both;"></div>
-<div class="card_details">
-	<h3>Details</h3>
-	<div id="box">
-		  <b>Ability:</b> <%=h @card.ability %> <br />
-		  <b>Force:</b> <%=h @card.force %><br />
-		  <b>Chi:</b> <%=h @card.chi %><br />
-		  <b>Honor requirement:</b> <%=h @card.honor_requirement %><br />
-		  <b>Gold cost:</b> <%=h @card.gold_cost %><br />
-		  <b>Prov str:</b> <%=h @card.prov_str %><br />
-		  <b>Gold prod:</b> <%=h @card.gold_prod %><br />
-		  <b>Start honor:</b> <%=h @card.start_honor %><br />
-		  <b>Personal honor:</b> <%=h @card.personal_honor %><br />
-		  <b>Focus:</b> <%=h @card.focus %><br />
-		</p>
+			<%= link_to 'Back to cards', cards_path %>
+			</div>
+		</div>
 	</div>
 </div>
-<% if !current_user.nil? -%>
-	<% if admin? or (@card.user_id == current_user.id) -%>
-		<%= link_to 'Edit', edit_card_path(@card) %> |
-	<% end -%>
-<% end -%>
 
-<%= link_to 'Back', cards_path %>
+<div id="sidebar">
+	<div class="block">
+    <h3>Details</h3>
+    <div class="content">
+      <p><b>Ability:</b> <%=h @card.ability %> </p>
+		  <p><b>Force:</b> <%=h @card.force %></p>
+		  <p><b>Chi:</b> <%=h @card.chi %></p>
+		  <p><b>Honor requirement:</b> <%=h @card.honor_requirement %></p>
+		  <p><b>Gold cost:</b> <%=h @card.gold_cost %></p>
+		  <p><b>Prov str:</b> <%=h @card.prov_str %></p>
+		  <p><b>Gold prod:</b> <%=h @card.gold_prod %></p>
+		  <p><b>Start honor:</b> <%=h @card.start_honor %></p>
+		  <p><b>Personal honor:</b> <%=h @card.personal_honor %></p>
+		  <p><b>Focus:</b> <%=h @card.focus %></p>
+    </div>
+  </div>
+</div>

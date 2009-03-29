@@ -1,28 +1,48 @@
-<%= link_to 'Create new deck', new_deck_path %>
-
-<% if @decks.size > 0 -%>
-<div id="cards">
-	<ul>
-	<% for deck in @decks %>
-			<li class="card">
-				<% if deck.cards.size > 0 %>
-					<%= link_to image_tag(deck.cards[0].photo.url(:avatar)), deck %>
-				<% else %>
-					<%= link_to image_tag("question.jpg"), deck %>
-				<% end %>
-				<%= link_to deck.name, deck %>
-				<%=deck.created_at.strftime("Created %m/%d/%Y") %>
-				<%=deck.updated_at.strftime(", last update  %m/%d/%Y") %><br />
-				Cards <%= h deck.cards.size %>
-				<% if admin? %>
-					<%= link_to 'Edit', edit_deck_path(deck) %> | 
-					<%= link_to 'Delete', deck, :confirm => 'Are you sure?', :method => :delete %>
-				<% end %>
-			</li>
-	<% end %>
-	</ul>
+<div id="main">
+	<div class="block">
+	<h3>Listing Decks</h3>
+	<% if @decks.size > 0 -%>
+		<div class="content">
+		<ul class="list">
+		<% for deck in @decks %>
+				<li>
+					<div class="left">
+						<% if deck.cards.size > 0 %>
+							<%= link_to image_tag(deck.cards[0].photo.url(:avatar)), deck %>
+						<% else %>
+							<%= link_to image_tag("question.jpg"), deck %>
+						<% end %>
+					</div>
+					<div class="item">
+					<p><%= link_to deck.name, deck %>
+					<span class="gray small"><%=deck.created_at.strftime("Created %m/%d/%Y") %>
+					<%=deck.updated_at.strftime(", last update  %m/%d/%Y") %></span><br/>
+					<span class="small">Total Cards <%= h deck.cards.size %></span></p>
+					<p><% if admin? %>
+						<%= link_to 'Edit', edit_deck_path(deck), :class => "icon edit" %> | 
+						<%= link_to 'Delete', deck, :confirm => 'Are you sure?', :method => :delete, :class => "icon delete" %>
+					<% end %></p>
+					</div>
+				</li>
+		<% end %>
+		</ul>
+		</div>
+	<% else -%>
+		You do not have any decks.
+	<% end -%>
+	</div>
 </div>
-<% else -%>
-	You do not have any decks.
-<% end -%>
+<div id="sidebar">
+	<div class="block">
+    <h3>Manage Decks</h3>
+    <div class="content">
+      <p><% if logged_in? %>
+				<%= link_to 'Add new deck', new_deck_path, :class => "icon add" %>
+			<% else %>
+				Please <%= link_to 'login', login_url %> to create new decks
+			<% end %></p>
+    </div>
+  </div>
+</div>
+
 

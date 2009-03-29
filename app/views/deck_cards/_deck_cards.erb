@@ -1,3 +1,4 @@
+<% if deck_cards.size > 0 -%>
 <table>
 <% prev_card_id = nil %>
 <% row_item_count = 0 %>
@@ -15,8 +16,8 @@
 		<div id="deck_card">
 		<%= link_to image_tag(deck_card.card.photo.url(:small)), deck_card.card %>
 		<%= link_to deck_card.card.name, deck_card.card %><br />
-		<span class='info'><%= deck_card.card.desc %></span>
-		<%= link_to 'Remove', deck_card, :confirm => 'Are you sure?', :method => :delete %>
+		<span class='gray small'><%= deck_card.card.desc %></span>
+		<p><%= link_to 'Remove', deck_card, :confirm => 'Are you sure?', :method => :delete, :class => "icon delete" %></p>
 		</div>
 	</td>
 	
@@ -29,3 +30,6 @@
 	<% end -%>
 <% end -%>
 </table>
+<% else -%>
+	<h2>There are no cards in this deck</h2>
+<% end -%>

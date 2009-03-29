@@ -33,7 +33,12 @@
         <div class="clear"></div>
       </div>
     </div>
-    <div id="wrapper">      
+    <div id="wrapper">
+			<div class="flash">
+	    <%= "<div class=\"message notice\"><p>#{flash[:notice]}</p></div>" if flash[:notice] %>
+			<%= "<div class=\"message error\"><p>#{flash[:error]}</p></div>" if flash[:error] %>
+			<%= "<div class=\"message warning\"><p>#{flash[:warning]}</p></div>" if flash[:warning] %>      
+			</div>
       <%= yield %>
     </div>
 		<div class="clear"></div>

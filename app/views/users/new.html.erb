@@ -1,21 +1,51 @@
-<%= error_messages_for :user %>
-<div id="login_box" class="login_form">
-<h2>Register</h2>
-<% form_for :user, :url => users_path do |f| -%>
-<label for="login">Login</label>
-<%= f.text_field :login, :class => "big" %><br/>
-
-<label for="email">Email</label>
-<%= f.text_field :email %><br/>
-
-<label for="password">Password</label>
-<%= f.password_field :password %><br/>
-
-<label for="password_confirmation">Confirm Password</label>
-<%= f.password_field :password_confirmation %><br/>
-
-<br/>
-By clicking 'Sign up' you are agreeing to our <%= link_to 'terms and conditions', terms_url %>
-<p><%= submit_tag 'Sign up' %></p>
-<% end -%>
+<%= error_messages_for :user %>  
+<div id="box">
+<div class="block" id="block-signup">
+  <h2>Register</h2>             
+  <div class="content">        
+		<% form_for :user, :url => users_path, :html => { :class => "form"} do |f| -%>
+      <div class="group">
+        <div class="left">
+          <label for="login" class="label">Login</label>
+        </div>
+        <div class="right">
+          <%= f.text_field :login, :class => "text_field" %>
+        </div>              
+        <div class="clear"></div>
+      </div>
+      <div class="group">
+        <div class="left">
+          <label class="label">Email</label>               
+        </div>
+        <div class="right">
+          <%= f.text_field :email, :class => "text_field" %>
+          <span class="description">Ex: test@example.com</span>
+        </div>              
+        <div class="clear"></div>
+      </div>
+      <div class="group">
+        <div class="left">
+          <label class="label">Password</label>
+        </div>
+        <div class="right">
+          <%= f.password_field :password, :class => "text_field" %>
+        </div>              
+        <div class="clear"></div>
+      </div>
+      <div class="group">
+        <div class="left">
+          <label class="label">Confirm Password</label>
+        </div>
+        <div class="right">
+          <%= f.password_field :password_confirmation, :class => "text_field" %>
+        </div>              
+        <div class="clear"></div>
+      </div>
+      <div class="group navform">
+	By clicking 'Sign up' you are agreeing to our <%= link_to 'terms and conditions', terms_url %>
+        <%= submit_tag 'Sign up', :class => "button" %>
+      </div>
+    <% end -%>
+  </div>
+</div>
 </div>

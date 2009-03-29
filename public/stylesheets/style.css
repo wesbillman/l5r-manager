@@ -150,6 +150,44 @@ strong#slogan {
   padding: 10px;
 }
 
+#errorExplanation {
+	border: 2px solid #A51111;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+	background-color: #F3F2E5;
+}
+
+#errorExplanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 12px;
+	margin: -7px;
+	background-color: #A51111;
+	color: #fff;
+}
+
+#errorExplanation p {
+	color: #A51111;
+	margin-bottom: 0;
+	padding: 5px;
+}
+
+#errorExplanation ul li {
+	font-size: 12px;
+	list-style: square;
+	margin-left: 20px;
+}
+
+#deck_card img, #card img {
+	float: left;
+	padding-right: 8px;
+}
+
+#card {
+	height: 320px;
+}
 /* pagination */
 
 .pagination span, .pagination a {
@@ -189,7 +227,7 @@ strong#slogan {
 
 .form input.text_field, .form textarea.text_area {
   width: 100%;
-  border: 1px solid #262626;
+  border: 1px solid #CCCCCC;
 }
 
 .form input.button {
@@ -253,7 +291,7 @@ ul.list li .item .avatar {
 }
 
 #box .block h2 {
-  background: #2F427A;  
+  background: #006699;  
   color: #FFF;
 }
 

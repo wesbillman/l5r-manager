@@ -1,9 +1,8 @@
-<h1>New card</h1>
-
-<% form_for(@card, :html => { :multipart => true }) do |f| %>
+<h2 class="title">New Card</h2>
+<% form_for(@card, :html => { :multipart => true, :class => "form" }) do |f| %>
 	<%= f.error_messages %>
 	<%= render :partial => 'form', :locals => { :f => f } %>	
-  <%= f.submit "Create" %> or <%= link_to 'Cancel', cards_path %>
+  <%= f.submit "Create", :class => "button" %> or <%= link_to 'Cancel', cards_path %>
 <% end %>
 
 

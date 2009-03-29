@@ -1,9 +1,4 @@
-<div id="box">
-	<b>Add Card to this Deck</b>
-
-	<%= error_messages_for(:deck_card) %>
-	<p>
-	<%= label(:deck_card, :card_id, 'Card') %>
-	<%= collection_select(:deck_card, :card_id, @cards, :id, :name) %>
-	</p>
-</div>
+<%= error_messages_for(:deck_card) %>
+<p>
+<%= collection_select(:deck_card, :card_id, @cards, :id, :name) %>
+</p>
