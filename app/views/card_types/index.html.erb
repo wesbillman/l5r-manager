@@ -1,20 +1,45 @@
-<h1>Listing card_types</h1>
+<div id="main">
+	<div class="block" id="block-tables">
+	  <div class="secondary-navigation">
+	    <ul>
+	      <li class="first"><%= link_to 'Users', users_url %></li>
+	      <li class="active"><%= link_to 'Card Types', card_types_url %></li>
+	      <li><%= link_to 'Clans', clans_url %></li>
+	      <li><%= link_to 'Decks', decks_url %></li>
+	    </ul>
+	    <div class="clear"></div>
+	  </div>
+		<div class="content">
+			<h2 class="title">Card Types</h2>
+		<% if admin? -%>
+		<table class="table">
+		  <tr>
+		    <th class="first">Name</th>
+				<th class="last">&nbsp;</th>
+		  </tr>
 
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
+			<% for card_type in @card_types %>
+		  <tr class="<%= cycle('odd', 'even') %>">
+		    <td><%=h card_type.name %></td>
+		    <td class="last"><%= link_to 'Show', card_type %> |
+		    	<%= link_to 'Edit', edit_card_type_path(card_type) %> |
+		      <%= link_to 'Destroy', card_type, :confirm => 'Are you sure?', :method => :delete %></td>
+		  </tr>
+		<% end %>
+		</table>
+		<% else -%>
+			<h2 class="title">Sorry, you must be an admin to access this page!</h2>
+		<% end -%>
+		</div>
+	</div>
+</div>
+<div id="sidebar">
+	<div class="block">
+    <h3>Manage Card Types</h3>
+    <div class="content">
+			<p><%= link_to 'New card type', new_card_type_path, :class => "icon add" %></p>			
+    </div>
+  </div>
+</div>
 
-<% for card_type in @card_types %>
-  <tr>
-    <td><%=h card_type.name %></td>
-    <td><%= link_to 'Show', card_type %></td>
-    <td><%= link_to 'Edit', edit_card_type_path(card_type) %></td>
-    <td><%= link_to 'Destroy', card_type, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
-
-<%= link_to 'New card_type', new_card_type_path %>

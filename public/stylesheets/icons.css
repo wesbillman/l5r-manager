@@ -18,6 +18,26 @@
     background-image: url(../images/register.png);
 }
 
+.user {
+    background-image: url(../images/user.png);
+}
+
+.logout {
+    background-image: url(../images/logout.png);
+}
+
+.cardtype {
+    background-image: url(../images/cardtype.png);
+}
+
+.clans {
+    background-image: url(../images/clans.png);
+}
+
+.decks {
+    background-image: url(../images/decks.png);
+}
+
 .icon {
     background-position:0 40%;
     background-repeat:no-repeat;

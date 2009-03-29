@@ -15,8 +15,8 @@
 			<div id="user-navigation">
         <ul>
 					<% if logged_in? -%>
-						<li><%= link_to h(current_user.login), current_user %></li>
-						<li><%= link_to 'logout', logout_url %></li>
+						<li><%= link_to h(current_user.login), current_user, :class => "icon user" %></li>
+						<li><%= link_to 'logout', logout_url, :class => "icon logout" %></li>
 		      <% else -%>
 		        <li><%= link_to 'login', login_url, :class => "icon key" %></li>
 						<li><%= link_to 'register', signup_url, :class => "icon register" %></li>

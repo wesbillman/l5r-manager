@@ -1,18 +1,45 @@
-<h1>Listing Users</h1>
+<div id="main">
+	<div class="block" id="block-tables">
+	  <div class="secondary-navigation">
+	    <ul>
+	      <li class="first active"><%= link_to 'Users', users_url %></li>
+	      <li><%= link_to 'Card Types', card_types_url %></li>
+	      <li><%= link_to 'Clans', clans_url %></li>
+	      <li><%= link_to 'Decks', decks_url %></li>
+	    </ul>
+	    <div class="clear"></div>
+	  </div>
+		<div class="content">
+			<h2 class="title">Users</h2>
+		<% if admin? -%>
+		<table class="table">
+		  <tr>
+		    <th class="first">Login</th>
+		    <th>Email</th>
+				<th class="last">&nbsp;</th>
+		  </tr>
 
-<table>
-  <tr>
-    <th>Login</th>
-    <th>Email</th>
-  </tr>
-
-<% for user in @users %>
-  <tr>
-    <td><%=h user.login %></td>
-    <td><%=h user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+		<% for user in @users %>
+		  <tr class="<%= cycle('odd', 'even') %>">
+		    <td><%=h user.login %></td>
+		    <td><%=h user.email %></td>
+		    <td class="last"><%= link_to 'Show', user %> |
+			 			<%= link_to 'Edit', edit_user_path(user) %> |
+						<%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+		  </tr>
+		<% end %>
+		</table>
+		<% else -%>
+			<h2 class="title">Sorry, you must be an admin to access this page!</h2>
+		<% end -%>
+		</div>
+	</div>
+</div>
+<div id="sidebar">
+	<div class="block">
+    <h3>Manage Users</h3>
+    <div class="content">
+			<p><%= link_to 'Register new user', signup_url, :class => "icon user" %></p>			
+    </div>
+  </div>
+</div>

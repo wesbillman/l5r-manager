@@ -16,8 +16,10 @@ module ApplicationHelper
         when /cards/ then :card
         when /decks/ then :deck
         when /setting/ then :setting
-        when /settings/ then :setting
-        when /settings/ then :setting
+        when /user/ then :setting
+        when /card_type/ then :setting
+        when /clan/ then :setting
+        when /deck/ then :setting            
         else :card
       end
     @current_navigation == navigation

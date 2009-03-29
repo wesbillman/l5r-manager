@@ -127,13 +127,13 @@ strong#slogan {
 }
 
 .secondary-navigation {
-  background: #2F427A;
-  border-bottom-color: #262626;
+	background: #232C30;
+  border-bottom: 4px solid #006699;
   font-size: 15px;
 }
 
 .secondary-navigation ul li.active, .secondary-navigation ul li.active a:hover {
-  background-color: #262626;
+  background-color: #006699;
 }
 
 #footer  {      
