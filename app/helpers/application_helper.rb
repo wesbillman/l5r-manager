@@ -1,7 +1,7 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
-  @@selected_attribute = %( class="selected").freeze
+  @@selected_attribute = %( class="active").freeze
   def class_for(options)
     @@selected_attribute if current_page?(options)
   end
@@ -15,8 +15,10 @@ module ApplicationHelper
       case controller.controller_name
         when /cards/ then :card
         when /decks/ then :deck
+        when /setting/ then :setting
         when /settings/ then :setting
-        else :admin
+        when /settings/ then :setting
+        else :card
       end
     @current_navigation == navigation
   end

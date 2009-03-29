@@ -1,21 +1,39 @@
-<% if logged_in? %>
-	<%= link_to 'Add new card', new_card_path %>
-<% else %>
-	Please <%= link_to 'login', login_url %> to create new cards
-<% end %>
-<div id="cards">
-<ul>
-<% for card in @cards %>
-		<li class="card">
-			<%= link_to image_tag(card.photo.url(:avatar)), card %>
-			<%= link_to card.name, card %>
-			Created by <%= h card.user.login%>
-			<%=card.created_at.strftime(" on %m/%d/%Y") %><br />
-			<% if admin? %>
-				<%= link_to 'Edit', edit_card_path(card) %> | 
-				<%= link_to 'Delete', card, :confirm => 'Are you sure?', :method => :delete %>
-			<% end %>
-		</li>
-<% end %>
-</ul>
+<div id="main">
+	<div class="block">
+	<h3>Listing Cards</h3>
+		<div class="content">
+		<ul class="list">
+		<% for card in @cards %>
+				<li>
+					<div class="left">
+					<%= link_to image_tag(card.photo.url(:avatar)), card %>
+					</div>
+					<div class="item">
+					<p><%= link_to card.name, card %>
+					Created by <%= h card.user.login%>
+					<%=card.created_at.strftime(" on %m/%d/%Y") %><br/>
+					<span class="gray small"><%= h card.desc %></span></p>
+					<p>
+					<% if admin? %>
+						<%= link_to 'Edit', edit_card_path(card), :class => "icon edit" %> | 
+						<%= link_to 'Delete', card, :confirm => 'Are you sure?', :method => :delete, :class => "icon delete" %>
+					<% end %></p>
+					</div>
+				</li>
+		<% end %>
+		</ul>
+		</div>
+	</div>
+</div>
+<div id="sidebar">
+	<div class="block">
+    <h3>Manage Cards</h3>
+    <div class="content">
+      <p><% if logged_in? %>
+				<%= link_to 'Add new card', new_card_path, :class => "icon add" %>
+			<% else %>
+				Please <%= link_to 'login', login_url %> to create new cards
+			<% end %></p>
+    </div>
+  </div>
 </div>

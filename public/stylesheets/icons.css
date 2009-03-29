@@ -1,0 +1,19 @@
+
+.add {
+    background-image: url(../images/add.png);
+}
+
+.edit {
+    background-image: url(../images/edit.png);
+}
+
+.delete {
+    background-image: url(../images/delete.png);
+}
+.icon {
+    background-position:0 40%;
+    background-repeat:no-repeat;
+    padding-bottom:3px;
+    padding-left:20px;
+    padding-top:4px;
+}
