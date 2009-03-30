@@ -1,8 +1,9 @@
 <div id="main">
 	<div class="block">
 	<h3>Listing Decks</h3>
+	<div class="content">
 	<% if @decks.size > 0 -%>
-		<div class="content">
+
 		<ul class="list">
 		<% for deck in @decks %>
 				<li>
@@ -15,21 +16,20 @@
 					</div>
 					<div class="item">
 					<p><%= link_to deck.name, deck %>
-					<span class="gray small"><%=deck.created_at.strftime("Created %m/%d/%Y") %>
-					<%=deck.updated_at.strftime(", last update  %m/%d/%Y") %></span><br/>
+					<span class="gray small"><%=deck.created_at.strftime("Created %m/%d/%Y,") %>
+					<%=deck.updated_at.strftime(" last update  %m/%d/%Y") %></span><br/>
 					<span class="small">Total Cards <%= h deck.cards.size %></span></p>
-					<p><% if admin? %>
-						<%= link_to 'Edit', edit_deck_path(deck), :class => "icon edit" %> | 
-						<%= link_to 'Delete', deck, :confirm => 'Are you sure?', :method => :delete, :class => "icon delete" %>
-					<% end %></p>
+					<p><%= link_to 'Edit', edit_deck_path(deck), :class => "icon edit" %> | 
+						<%= link_to 'Delete', deck, :confirm => 'Are you sure?', :method => :delete, :class => "icon delete" %></p>
 					</div>
 				</li>
 		<% end %>
 		</ul>
-		</div>
+		
 	<% else -%>
-		You do not have any decks.
+		<h2 class="title">You do not have any decks.</h2>
 	<% end -%>
+		</div>
 	</div>
 </div>
 <div id="sidebar">
