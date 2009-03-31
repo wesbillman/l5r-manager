@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'rmagick' # Don't use a capital 'R'.
+require 'RMagick' # Don't use a capital 'R'.
 
 
 class CardsController < ApplicationController
