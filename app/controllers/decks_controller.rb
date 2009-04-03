@@ -19,6 +19,7 @@ class DecksController < ApplicationController
   def show
     @deck = Deck.find(params[:id])
     @user = User.find(@deck.user_id)
+    @card_types = CardType.find(:all)
     @cards = Card.find(:all)
     respond_to do |format|
       format.html # show.html.erb
@@ -50,7 +51,8 @@ class DecksController < ApplicationController
       flash[:notice] = 'Card was added successfully'
       redirect_to(:action => 'show', :id => @deck.id)
     else
-      render(:template => 'deck_card/deck_card')
+      flash[:error] = @deck_card.errors.full_messages.to_sentence
+      redirect_to(:action => "show")
     end
   end
 

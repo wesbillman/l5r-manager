@@ -1,4 +1,8 @@
+<% javascript 'dynamic_cards' %>
 <%= error_messages_for(:deck_card) %>
 <p>
-<%= collection_select(:deck_card, :card_id, @cards, :id, :name) %>
+<%= collection_select(:card, :card_type_id, @card_types, :id, :name, :prompt => "Select a Card Type") %>
+</p>
+<p id="card_field">
+<%= collection_select(:deck_card, :card_id, @cards, :id, :name, :prompt => "Select a Card") %>
 </p>

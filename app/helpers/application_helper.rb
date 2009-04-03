@@ -1,6 +1,10 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
+  def javascript(*files)
+    content_for(:head) { javascript_include_tag(*files) }
+  end
+  
   @@selected_attribute = %( class="active").freeze
   def class_for(options)
     @@selected_attribute if current_page?(options)

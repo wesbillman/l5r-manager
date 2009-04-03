@@ -1,0 +1,25 @@
+var cards = new Array();
+<% for card in @cards %>
+	cards.push(new Array(<%= card.card_type_id %>, '<%=h card.name %>', <%= card.id %>));
+<% end -%>
+
+function cardtypeSelected() {
+	card_type_id = $('card_card_type_id').getValue();
+	options = $('deck_card_card_id').options;
+	options.length = 1;
+	cards.each(function(card) {
+		if(card[0] == card_type_id) {
+			options[options.length] = new Option(card[1], card[2]);
+		}
+	});
+	if (options.length == 1) {
+		$('card_field').hide();
+	} else {
+		$('card_field').show();
+	}
+}
+
+document.observe('dom:loaded', function() {
+	$('card_field').hide();
+	$('card_card_type_id').observe('change', cardtypeSelected);
+});
