@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :cards
   map.resources :setting
   map.resources :users
+  map.resources :help
   map.resource  :session, :controller => 'session'
   
   map.settings '/settings', :controller => 'setting', :action => 'index'

@@ -24,7 +24,7 @@ module ApplicationHelper
         when /card_type/ then :setting
         when /clan/ then :setting
         when /deck/ then :setting            
-        else :card
+        else :setting
       end
     @current_navigation == navigation
   end

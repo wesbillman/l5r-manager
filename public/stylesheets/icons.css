@@ -14,6 +14,10 @@
     background-image: url(../images/key.png);
 }
 
+.help {
+    background-image: url(../images/question.png);
+}
+
 .register {
     background-image: url(../images/register.png);
 }
